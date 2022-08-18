@@ -1,10 +1,10 @@
 <?php
 include_once '../includes/_banco.php';
-include_once './_header.php';
+include_once '_header.php';
 if ( isset($_GET['id']) || !empty($_GET['id'])){
 $id = $_GET['id'];
 $sql = "SELECT * FROM categorias WHERE CategoriaID = ".$id;
-$resultado = mysqli_querry($conexao,$sql);
+$resultado = mysqli_query($conn,$sql);
  $dados = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
 
 }else{
@@ -19,14 +19,16 @@ include_once './_menu.php';
 ?>
 <main>
 <h2> Administração de Categorias </h2>
-<a href="categoria-lista.php" methhod="post" enctype="multipart/form-data">
+<a href="categoria-lista.php">Listagem</a>
+<hr>
+<form href="categoria-processa.php" methhod="post" enctype="multipart/form-data">
 <input type="hidden" value="salvar" name="acao">
-<input type="text" value="<?php echo $dados['Imagem'];?>" name="imagem">
-<input type="text" name="id" value="<?php echo $id;?>"><br>
+
+
 <label for="nome">Nome:</label><br>
 <input type="text" id="nome" name="nome" value="<?php echo $dados ['Nome'];?>"><br>
 <label for="descricao">Descrição:</label>
-<texarea id="descricao" name="descricao"><?php echo $dados['Descricao'];?></textarea><br>
+<textarea id="descricao" name="descricao"><?php echo $dados['Descricao'];?></textarea><br>
 <label for="imagem">Imagem:</label><br>
 <?php
 if (!empty($dados['imagem']) ){

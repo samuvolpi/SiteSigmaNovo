@@ -1,6 +1,4 @@
-<?php
-include_once './includes/_banco.php';
-?>
+
 
 <?php
 $servername = "localhost";

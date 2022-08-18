@@ -53,7 +53,7 @@ foreach ($produtos as $i => $value) {
     $sql = "$sql <br> INSERT INTO produtos(nome, preco, descricao, imagem, CategoriaID, ativo) VALUE('$nome', '$preco', '$descricao', '$imagem', 1, 1);";
 
 }
-
+ 
 
 /*
 $sqlStr = "";

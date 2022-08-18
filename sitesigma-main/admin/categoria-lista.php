@@ -1,7 +1,10 @@
 <?php
+include_once '../includes/_head.php';
 include_once '../includes/_banco.php';
-include_once './_header.php';
-include_once './_menu.php';
+ $sql = "SELECT * FROM categorias";
+ $resultado = mysqli_query($conn,$sql);
+ $total = mysqli_num_rows($resultado); 
+ include_once './_menu.php';
 ?>
 
 <?php
@@ -44,6 +47,6 @@ if ($resultado) {
 </main>
 
 <?php
-include_once 'footer.php';
+include_once '_footer.php';
 ?>
 

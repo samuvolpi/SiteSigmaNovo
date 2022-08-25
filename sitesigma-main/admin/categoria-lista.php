@@ -1,4 +1,6 @@
 <?php
+include_once '_valida.php';
+include_once '../includes/_dados.php';
 include_once '../includes/_head.php';
 include_once '../includes/_banco.php';
  $sql = "SELECT * FROM categorias";
